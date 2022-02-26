@@ -1,0 +1,72 @@
+{
+  "openapi": "3.0.2",
+  "info": {
+    "title": "Todo Backend API",
+    "version": "1.0",
+    "description": "Todoアプリ バックエンド用API",
+    "contact": {
+      "name": "Ix5231"
+    }
+  },
+  "servers": [
+    {
+      "url": "https://localhost:5000/api/v1"
+    }
+  ],
+  "paths": {
+    "/todo": {
+      "post": {
+        "tags": [
+          "todos"
+        ],
+        "summary": "Todo作成",
+        "description": "新規Todoを作成する",
+        "requestBody": {
+          "description": "作成Todoのデータ",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "./reference/model.json#/components/schemas/Todo"
+              },
+              "examples": {}
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "./reference/model.json#/components/schemas/Todo"
+                },
+                "examples": {}
+              }
+            }
+          },
+          "400": {
+            "description": "NG",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "./reference/model.json#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          }
+        },
+        "operationId": "post-todo"
+      }
+    }
+  },
+  "components": {
+    "schemas": {}
+  },
+  "tags": [
+    {
+      "name": "todos",
+      "description": "Todoにアクセス"
+    }
+  ]
+}
