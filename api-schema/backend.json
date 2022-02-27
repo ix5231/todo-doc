@@ -16,9 +16,6 @@
   "paths": {
     "/todo": {
       "post": {
-        "tags": [
-          "todos"
-        ],
         "summary": "Todo作成",
         "description": "新規Todoを作成する",
         "requestBody": {
